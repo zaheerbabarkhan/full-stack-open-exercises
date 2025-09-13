@@ -39,6 +39,8 @@ function App() {
         personService.update(person.id, updatedPerson)
           .then(returnedPerson => {
             setPersons(persons.map(person => person.id === returnedPerson.id ? returnedPerson : person))
+            setNewName("")
+            setNewNumber("")
           })
       }
     }
@@ -58,6 +60,13 @@ function App() {
           }, 5000);
           setNewName("")
           setNewNumber("")
+        }).catch(error => {
+          console.log(error.response.data.error.message)
+          setIsError(true)
+          setNotificationMessage(error.response.data.error.message)
+          setTimeout(() => {
+            setNotificationMessage(null)
+          }, 5000);
         })
     }
 

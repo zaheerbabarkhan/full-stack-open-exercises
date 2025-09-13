@@ -1,15 +1,11 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3001/persons"
+const baseURL = "/api/persons"
 
 const getAll = () => {
     const request = axios.get(baseURL)
-    const nonExisting = {
-      "name": "DO Not Exist",
-      "number": "39-23-6423122",
-      "id": "10"
-    }
-    return request.then(response => response.data.concat(nonExisting))
+
+    return request.then(response => response.data)
 }
 
 
