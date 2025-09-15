@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ui": "@powershell if (Test-Path dist) { Remove-Item -Recurse -Force dist } && cd ../phonebook-frontend && npm run build && @powershell Copy-Item dist -Recurse ../phonebook-backend",
+    "build:ui": "@powershell if (Test-Path dist) { Remove-Item -Recurse -Force dist } && cd ../phonebook-frontend && npm run build && @powershell Copy-Item dist -Recurse ../phonebook-backend-include-part3",
     "deploy:full": "npm run build:ui && git add . && git commit -m \"initial code for the backend and the frontend \" && git push",
     "dev": "node --watch index.js",
     "start": "node index.js",
