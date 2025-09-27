@@ -89,7 +89,7 @@ const App = () => {
       }, 3000)
 
       blogFormRef.current.toggleDisplay()
-    } catch (error) {
+    } catch (_error) {
       setIsError(true)
       setnotificationMessage('blog cannot be added')
       setTimeout(() => {
